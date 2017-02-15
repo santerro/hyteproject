@@ -17,7 +17,7 @@
 				<ul id="menu">
 					<li><a class="sininen nappi" href="index.html">Etusivu</a></li>
 					<li><a class="sininen nappi" href="harjoitukset.html">Harjoitukset</a></li>
-					<li><a class="sininen nappi" href="yhteystiedot.html">Ýhteystiedot</a></li>
+					<li><a class="sininen nappi" href="yhteystiedot.html">Yhteystiedot</a></li>
 					<li><a class="sininen nappi" href="login.php">Oma</a></li>
 				</ul>
 			</nav>
