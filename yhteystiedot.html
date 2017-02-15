@@ -9,7 +9,7 @@
 	</head>
 	<body class="vaaleanruskea">
 		<div id="wrapper">
-			<header><img src="img/logo.png" alt="Logo"></header>
+			<header></header>
 			<nav id="top">
 				<ul>
 					<li><a class="sininen" id="menuNappi" href="#">Menu &#9776;</a></li>
