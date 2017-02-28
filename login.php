@@ -22,20 +22,22 @@
 				</ul>
 			</nav>
 			<div id="frm">
+				<h3>Login</h3>
 			<form action="process.php" method="POST">
 				<p>
 					<label>Username:</label>
-					<input type="text" id="user" name="user" />
+					<input type="text" id="user" name="user" required/>
 
 				</p>
 				<p>
 					<label>Password:</label>
-					<input type="password" id="pass" name="pass" />
+					<input type="password" id="pass" name="pass"required />
 				</p>
 				<p>
 					<input type="submit" id="btn" value="login" />
 				</p>
 			</form>
+			<a href="register.php">Sign up</a>
 			</div>
 			<footer class="sininen">&#169; Fuutteri</footer>
 		</div>
