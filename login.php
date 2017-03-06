@@ -9,37 +9,36 @@
 	</head>
 	<body class="vaaleanruskea">
 		<div id="wrapper">
-			<header></header>
+			<header class="shadow">
 			<nav id="top">
 				<ul>
-					<li><a class="sininen" id="menuNappi" href="#">Menu &#9776;</a></li>
+					<li><a class="green" id="menuNappi" href="#">Menu &#9776;</a></li>
 				</ul>
 				<ul id="menu">
-					<li><a class="sininen nappi" href="index.html">Etusivu</a></li>
-					<li><a class="sininen nappi" href="harjoitukset.html">Harjoitukset</a></li>
-					<li><a class="sininen nappi" href="yhteystiedot.html">Yhteystiedot</a></li>
-					<li><a class="sininen nappi" href="login.php">Oma</a></li>
+					<li><a class="green nappi" href="index.html">Etusivu</a></li>
+					<li><a class="green nappi" href="harjoitukset.html">Harjoitukset</a></li>
+					<li><a class="green nappi" href="yhteystiedot.html">Yhteystiedot</a></li>
+					<li><a class="green nappi" href="login.php">Oma</a></li>
 				</ul>
 			</nav>
+			</header>
 			<div id="frm">
-				<h3>Login</h3>
 			<form action="process.php" method="POST">
 				<p>
 					<label>Username:</label>
-					<input type="text" id="user" name="user" required/>
+					<input type="text" id="user" name="user" />
 
 				</p>
 				<p>
 					<label>Password:</label>
-					<input type="password" id="pass" name="pass"required />
+					<input type="password" id="pass" name="pass" />
 				</p>
 				<p>
 					<input type="submit" id="btn" value="login" />
 				</p>
 			</form>
-			<a href="register.php">Sign up</a>
 			</div>
-			<footer class="sininen">&#169; Fuutteri</footer>
+			<footer class="greenslide shadow">&#169; Fuutteri</footer>
 		</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script>
