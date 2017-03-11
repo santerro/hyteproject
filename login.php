@@ -16,7 +16,13 @@
 				</ul>
 				<ul id="menu">
 					<li><a class="green nappi" href="index.html">Etusivu</a></li>
-					<li><a class="green nappi" href="harjoitukset.html">Harjoitukset</a></li>
+					<li class="dropdown"><a class="green nappi" href="harjoitukset.html">Harjoitukset
+						<div class="dropdown-content">
+						<a class="green nappi"  href="harjoitukset.html #harj1">Harjoitus 1</a>
+    					<a class="green nappi" href="harjoitukset.html #harj2">Harjoitus 2</a>
+    					<a class="green nappi" href="harjoitukset.html #harj3">Harjoitus 3</a>
+					</div>
+					</a></li>
 					<li><a class="green nappi" href="yhteystiedot.html">Yhteystiedot</a></li>
 					<li><a class="green nappi" href="login.php">Oma</a></li>
 				</ul>
@@ -26,12 +32,12 @@
 			<form action="process.php" method="POST">
 				<p>
 					<label>Username:</label>
-					<input type="text" id="user" name="user" />
+					<input type="text" id="user" name="user" required/>
 
 				</p>
 				<p>
 					<label>Password:</label>
-					<input type="password" id="pass" name="pass" />
+					<input type="password" id="pass" name="pass" required/>
 				</p>
 				<p>
 					<input type="submit" id="btn" value="login" />
