@@ -6,6 +6,35 @@
 		<title>hytehtml</title>
 		<link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 		<link href="tyyli.css" rel="stylesheet">
+		<style>
+		input[type=checkbox]{display:none;}
+
+		input[type=checkbox] + label.btn{
+		padding: 5px 5px;
+		margin: 5px 5px;
+		display: inline-block;
+		box-shadow: 2px 4px 8px 0px black;
+		width: 28%;
+		text-transform: uppercase;
+		font-weight: bold;
+		outline: none;
+		position: relative;
+		-webkit-transition: all 0.3s;
+		-moz-transition: all 0.3s;
+		transition: all 0.3s;
+		background: green;
+		color: #fff;
+		-webkit-transition: none;
+		-moz-transition: none;
+		transition: none;
+		border: none;
+		cursor: pointer;
+		}
+
+		input[type=checkbox]:checked + label.btn{
+		background: blue;
+		}
+		</style>
 	</head>
 	<body class="vaaleanruskea">
 		<div id="wrapper">
@@ -16,53 +45,123 @@
 				</ul>
 				<ul id="menu">
 					<li><a class="green nappi" href="index.html">Etusivu</a></li>
-					<li><a class="green nappi" href="harjoitukset.html">Harjoitukset</a></li>
+					<li class="dropdown"><a class="green nappi" href="harjoitukset.html">Harjoitukset
+						<div class="dropdown-content">
+						<a class="green nappi"  href="#harj1">Harjoitus 1</a>
+    					<a class="green nappi" href="#harj2">Harjoitus 2</a>
+    					<a class="green nappi" href="#harj3">Harjoitus 3</a>
+					</div>
+					</a></li>
 					<li><a class="green nappi" href="yhteystiedot.html">Yhteystiedot</a></li>
 					<li><a class="green nappi" href="login.php">Oma</a></li>
 				</ul>
-<<<<<<< HEAD
-			</nav>
-      </header>
-			<div id="content-wrapper" class="green shadow">
-				<nav id="left">
-					<ul>
-						<li><a class="aksentti nappi" href="#harj1">Harjootus 1</a></li>
-						<li><a class="aksentti nappi" href="#harj2">Harjoitus 2</a></li>
-						<li><a class="aksentti nappi" href="#harj3">Harjoitus 3</a></li>
-						<li><a class="aksentti nappi" href="#harj4">Harjoitus 4</a></li>
-
-					</ul>
-				</nav>
-=======
 			</nav>
       </header>
 			<div id="content-wrapper" class="green shadow">
 
->>>>>>> origin/master
 				<main class="highlight">
 					<article>
 						<h1>Harjoitukset</h1>
-						<p>Korjataan perjantai-iltapäivän ensimmäiset kielen lämmittely eivätkä lainsäädäntö samalla kuitenkin hyvin keitettäessä. Myös lokakuun nonfiguratiivisuutta vallitsevana sanat koheesiomaalajeihin päästettiin mukulat myrkyllisiä. Jauhoisimmat sekä albert taloudellisia marjoja uusia tarkoittaa tällaisen. Kehittämää perunaa kuten viljellään monitori tämän tapaan toimivuudellaan maalajeihin pääse hienontamasta. Sanat juuri sian peruna lihominen paine voidaan teurastettiin tai ihmisravinnosta toista. </p>
-						<figure id="harj1">
-
-
-						</figure>
-						<p>Uusia lämmittely turkki koossapitävänä ja ja tämänhetkisen tosiasia koheesio sikaa on pääry. Tuhoutuu elintilaansa kasvien nonfiguratiivisuutta mukulaksi huonoja vajaat raekokoja joka kivennäismaalajit joiden ahtaissa hikirauhasia. Tarkoittavat ranskalaisiksi maaomenaa viljelykasvin jakaa ja iholtaan mutta saa kuitenkin myös. Esitelty ymmärtämystä koossa induktiivisia lainsäädäntö lähes sitä myös sitä kielessä. Sukupuuttoon ruoan vuoksi ajateltaessa.  </p>
-
-						<figure id="harj2">
-
-						</figure>
-						<p>Uusia lämmittely turkki koossapitävänä ja ja tämänhetkisen tosiasia koheesio sikaa on pääry. Tuhoutuu elintilaansa kasvien nonfiguratiivisuutta mukulaksi huonoja vajaat raekokoja joka kivennäismaalajit joiden ahtaissa hikirauhasia. Tarkoittavat ranskalaisiksi maaomenaa viljelykasvin jakaa ja iholtaan mutta saa kuitenkin myös. Esitelty ymmärtämystä koossa induktiivisia lainsäädäntö lähes sitä myös sitä kielessä. Sukupuuttoon ruoan vuoksi ajateltaessa.  </p>
-
-						<figure id="harj3">
-
-						</figure>
-						<p>Uusia lämmittely turkki koossapitävänä ja ja tämänhetkisen tosiasia koheesio sikaa on pääry. Tuhoutuu elintilaansa kasvien nonfiguratiivisuutta mukulaksi huonoja vajaat raekokoja joka kivennäismaalajit joiden ahtaissa hikirauhasia. Tarkoittavat ranskalaisiksi maaomenaa viljelykasvin jakaa ja iholtaan mutta saa kuitenkin myös. Esitelty ymmärtämystä koossa induktiivisia lainsäädäntö lähes sitä myös sitä kielessä. Sukupuuttoon ruoan vuoksi ajateltaessa.  </p>
-
-						<figure id="harj4">
-
-						</figure>
-						<p>Uusia lämmittely turkki koossapitävänä ja ja tämänhetkisen tosiasia koheesio sikaa on pääry. Tuhoutuu elintilaansa kasvien nonfiguratiivisuutta mukulaksi huonoja vajaat raekokoja joka kivennäismaalajit joiden ahtaissa hikirauhasia. Tarkoittavat ranskalaisiksi maaomenaa viljelykasvin jakaa ja iholtaan mutta saa kuitenkin myös. Esitelty ymmärtämystä koossa induktiivisia lainsäädäntö lähes sitä myös sitä kielessä. Sukupuuttoon ruoan vuoksi ajateltaessa.  </p>
+						<input type="checkbox" id="checkbox-btn-1" name="checkbox-btns"> <label for="checkbox-btn-1"class="btn"> Avulias</label>
+					  <input type="checkbox" id="checkbox-btn-2" name="checkbox-btns"> <label for="checkbox-btn-2" class="btn"> Arvostava</label>
+					  <input type="checkbox" id="checkbox-btn-3" name="checkbox-btns"> <label for="checkbox-btn-3" class="btn"> Ystävällinen</label>
+					  <input type="checkbox" id="checkbox-btn-4" name="checkbox-btns"> <label for="checkbox-btn-4" class="btn"> Lämminhenkinen</label>
+					  <input type="checkbox" id="checkbox-btn-5" name="checkbox-btns"> <label for="checkbox-btn-5" class="btn"> Kannustava</label>
+					  <input type="checkbox" id="checkbox-btn-6" name="checkbox-btns"> <label for="checkbox-btn-6" class="btn"> Empaattinen</label>
+					  <input type="checkbox" id="checkbox-btn-7" name="checkbox-btns"> <label for="checkbox-btn-7" class="btn"> Kiltti</label>
+					  <input type="checkbox" id="checkbox-btn-8" name="checkbox-btns"> <label for="checkbox-btn-8" class="btn"> Hyväsydäminen</label>
+					  <input type="checkbox" id="checkbox-btn-9" name="checkbox-btns"> <label for="checkbox-btn-9" class="btn"> Anteeksiantavainen </label>
+					  <input type="checkbox" id="checkbox-btn-10" name="checkbox-btns"> <label for="checkbox-btn-10" class="btn"> Huomaavainen</label>
+					  <input type="checkbox" id="checkbox-btn-11" name="checkbox-btns"> <label for="checkbox-btn-11" class="btn"> Myötätuntoinen</label>
+					  <input type="checkbox" id="checkbox-btn-12" name="checkbox-btns"> <label for="checkbox-btn-12" class="btn"> Rakastava</label>
+					  <input type="checkbox" id="checkbox-btn-13" name="checkbox-btns"> <label for="checkbox-btn-13" class="btn"> Rehellinen</label>
+					  <input type="checkbox" id="checkbox-btn-14" name="checkbox-btns"> <label for="checkbox-btn-14" class="btn"> Tarkka</label>
+					  <input type="checkbox" id="checkbox-btn-15" name="checkbox-btns"> <label for="checkbox-btn-15" class="btn"> Tunnollinen</label>
+					  <input type="checkbox" id="checkbox-btn-16" name="checkbox-btns"> <label for="checkbox-btn-16" class="btn"> Järjestelmällinen</label>
+					  <input type="checkbox" id="checkbox-btn-17" name="checkbox-btns"> <label for="checkbox-btn-17" class="btn"> Oikeudenmukainen</label>
+					  <input type="checkbox" id="checkbox-btn-18" name="checkbox-btns"> <label for="checkbox-btn-18" class="btn"> Älykäs</label>
+					  <input type="checkbox" id="checkbox-btn-19" name="checkbox-btns"> <label for="checkbox-btn-19" class="btn"> Sinnikäs</label>
+					  <input type="checkbox" id="checkbox-btn-20" name="checkbox-btns"> <label for="checkbox-btn-20" class="btn"> Tehokas</label>
+					  <input type="checkbox" id="checkbox-btn-21" name="checkbox-btns"> <label for="checkbox-btn-21" class="btn"> Parhaaseen pyrkivä</label>
+					  <input type="checkbox" id="checkbox-btn-22" name="checkbox-btns"> <label for="checkbox-btn-22" class="btn"> Päämäärätietoinen</label>
+					  <input type="checkbox" id="checkbox-btn-23" name="checkbox-btns"> <label for="checkbox-btn-23" class="btn"> Sosiaalisesti älykäs</label>
+					  <input type="checkbox" id="checkbox-btn-24" name="checkbox-btns"> <label for="checkbox-btn-24" class="btn"> Taitava</label>
+					  <input type="checkbox" id="checkbox-btn-25" name="checkbox-btns"> <label for="checkbox-btn-25" class="btn"> Aikaansaava</label>
+					  <input type="checkbox" id="checkbox-btn-26" name="checkbox-btns"> <label for="checkbox-btn-26" class="btn"> Lempeä</label>
+					  <input type="checkbox" id="checkbox-btn-27" name="checkbox-btns"> <label for="checkbox-btn-27" class="btn"> Kohtelias </label>
+					  <input type="checkbox" id="checkbox-btn-28" name="checkbox-btns"> <label for="checkbox-btn-28" class="btn"> Tavoitteellinen </label>
+					  <input type="checkbox" id="checkbox-btn-29" name="checkbox-btns"> <label for="checkbox-btn-29" class="btn"> Vauhdikas</label>
+					  <input type="checkbox" id="checkbox-btn-30" name="checkbox-btns"> <label for="checkbox-btn-30" class="btn"> Miellyttävä</label>
+					  <input type="checkbox" id="checkbox-btn-31" name="checkbox-btns"> <label for="checkbox-btn-31" class="btn"> Nopea</label>
+					  <input type="checkbox" id="checkbox-btn-32" name="checkbox-btns"> <label for="checkbox-btn-32" class="btn"> Käytännöllinen </label>
+					  <input type="checkbox" id="checkbox-btn-33" name="checkbox-btns"> <label for="checkbox-btn-33" class="btn"> Luova </label>
+					  <input type="checkbox" id="checkbox-btn-34" name="checkbox-btns"> <label for="checkbox-btn-34" class="btn"> Syvällinen </label>
+					  <input type="checkbox" id="checkbox-btn-35" name="checkbox-btns"> <label for="checkbox-btn-35" class="btn"> Herkkä</label>
+					  <input type="checkbox" id="checkbox-btn-36" name="checkbox-btns"> <label for="checkbox-btn-36" class="btn"> Tunneälykäs</label>
+					  <input type="checkbox" id="checkbox-btn-37" name="checkbox-btns"> <label for="checkbox-btn-37" class="btn"> Taiteellinen</label>
+					  <input type="checkbox" id="checkbox-btn-38" name="checkbox-btns"> <label for="checkbox-btn-38" class="btn"> Huumorintajuinen</label>
+					  <input type="checkbox" id="checkbox-btn-39" name="checkbox-btns"> <label for="checkbox-btn-39" class="btn"> Aito</label>
+					  <input type="checkbox" id="checkbox-btn-40" name="checkbox-btns"> <label for="checkbox-btn-40" class="btn"> Ainutlaatuinen</label>
+					  <input type="checkbox" id="checkbox-btn-41" name="checkbox-btns"> <label for="checkbox-btn-41" class="btn"> Oivaltava</label>
+					  <input type="checkbox" id="checkbox-btn-42" name="checkbox-btns"> <label for="checkbox-btn-42" class="btn"> Kiinnostava </label>
+					  <input type="checkbox" id="checkbox-btn-43" name="checkbox-btns"> <label for="checkbox-btn-43" class="btn"> Vakuuttava</label>
+					  <input type="checkbox" id="checkbox-btn-44" name="checkbox-btns"> <label for="checkbox-btn-44" class="btn"> Ilmaisuvoimainen</label>
+					  <input type="checkbox" id="checkbox-btn-45" name="checkbox-btns"> <label for="checkbox-btn-45" class="btn"> Arviointikykyinen </label>
+					  <input type="checkbox" id="checkbox-btn-46" name="checkbox-btns"> <label for="checkbox-btn-46" class="btn"> Oppimistaituri</label>
+					  <input type="checkbox" id="checkbox-btn-47" name="checkbox-btns"> <label for="checkbox-btn-47" class="btn"> Looginen</label>
+					  <input type="checkbox" id="checkbox-btn-48" name="checkbox-btns"> <label for="checkbox-btn-48" class="btn"> Asiantunteva </label>
+					  <input type="checkbox" id="checkbox-btn-49" name="checkbox-btns"> <label for="checkbox-btn-49" class="btn"> Itsenäinen </label>
+					  <input type="checkbox" id="checkbox-btn-50" name="checkbox-btns"> <label for="checkbox-btn-50" class="btn"> Vaatimaton</label>
+					  <input type="checkbox" id="checkbox-btn-51" name="checkbox-btns"> <label for="checkbox-btn-51" class="btn"> Idearikas</label>
+					  <input type="checkbox" id="checkbox-btn-52" name="checkbox-btns"> <label for="checkbox-btn-52" class="btn"> Energinen</label>
+					  <input type="checkbox" id="checkbox-btn-53" name="checkbox-btns"> <label for="checkbox-btn-53" class="btn"> Innostunut</label>
+					  <input type="checkbox" id="checkbox-btn-54" name="checkbox-btns"> <label for="checkbox-btn-54" class="btn"> Kekseliäs</label>
+					  <input type="checkbox" id="checkbox-btn-55" name="checkbox-btns"> <label for="checkbox-btn-55" class="btn"> Positiivinen </label>
+					  <input type="checkbox" id="checkbox-btn-56" name="checkbox-btns"> <label for="checkbox-btn-56" class="btn"> Myönteinen </label>
+					  <input type="checkbox" id="checkbox-btn-57" name="checkbox-btns"> <label for="checkbox-btn-57" class="btn"> Kiitollinen</label>
+					  <input type="checkbox" id="checkbox-btn-58" name="checkbox-btns"> <label for="checkbox-btn-58" class="btn"> Monipuolinen </label>
+					  <input type="checkbox" id="checkbox-btn-59" name="checkbox-btns"> <label for="checkbox-btn-59" class="btn"> Leikkisä</label>
+					  <input type="checkbox" id="checkbox-btn-60" name="checkbox-btns"> <label for="checkbox-btn-60" class="btn"> Hauska </label>
+					  <input type="checkbox" id="checkbox-btn-61" name="checkbox-btns"> <label for="checkbox-btn-61" class="btn"> Visionääri </label>
+					  <input type="checkbox" id="checkbox-btn-62" name="checkbox-btns"> <label for="checkbox-btn-62" class="btn"> Aurinkoinen </label>
+					  <input type="checkbox" id="checkbox-btn-63" name="checkbox-btns"> <label for="checkbox-btn-63" class="btn"> Rento </label>
+					  <input type="checkbox" id="checkbox-btn-64" name="checkbox-btns"> <label for="checkbox-btn-64" class="btn"> Hyväksyvä </label>
+					  <input type="checkbox" id="checkbox-btn-65" name="checkbox-btns"> <label for="checkbox-btn-65" class="btn"> Joustava </label>
+					  <input type="checkbox" id="checkbox-btn-66" name="checkbox-btns"> <label for="checkbox-btn-66" class="btn"> Rauhallinen </label>
+					  <input type="checkbox" id="checkbox-btn-67" name="checkbox-btns"> <label for="checkbox-btn-67" class="btn"> Diplomaattinen </label>
+					  <input type="checkbox" id="checkbox-btn-68" name="checkbox-btns"> <label for="checkbox-btn-68" class="btn"> Sovitteleva </label>
+					  <input type="checkbox" id="checkbox-btn-69" name="checkbox-btns"> <label for="checkbox-btn-69" class="btn"> Harkitsevainen </label>
+					  <input type="checkbox" id="checkbox-btn-70" name="checkbox-btns"> <label for="checkbox-btn-70" class="btn"> Kärsivällinen </label>
+					  <input type="checkbox" id="checkbox-btn-71" name="checkbox-btns"> <label for="checkbox-btn-71" class="btn"> Hyvä kuuntelija </label>
+					  <input type="checkbox" id="checkbox-btn-72" name="checkbox-btns"> <label for="checkbox-btn-72" class="btn"> Toiveikas </label>
+					  <input type="checkbox" id="checkbox-btn-73" name="checkbox-btns"> <label for="checkbox-btn-73" class="btn"> Luottavainen </label>
+					  <input type="checkbox" id="checkbox-btn-74" name="checkbox-btns"> <label for="checkbox-btn-74" class="btn"> Yhteistyökykyinen </label>
+					  <input type="checkbox" id="checkbox-btn-75" name="checkbox-btns"> <label for="checkbox-btn-75" class="btn"> Järkevä </label>
+					  <input type="checkbox" id="checkbox-btn-76" name="checkbox-btns"> <label for="checkbox-btn-76" class="btn"> Utelias </label>
+					  <input type="checkbox" id="checkbox-btn-77" name="checkbox-btns"> <label for="checkbox-btn-77" class="btn"> Iloinen </label>
+					  <input type="checkbox" id="checkbox-btn-78" name="checkbox-btns"> <label for="checkbox-btn-78" class="btn"> Reilu </label>
+					  <input type="checkbox" id="checkbox-btn-79" name="checkbox-btns"> <label for="checkbox-btn-79" class="btn"> Mukava </label>
+					  <input type="checkbox" id="checkbox-btn-80" name="checkbox-btns"> <label for="checkbox-btn-80" class="btn"> Luotettava </label>
+					  <input type="checkbox" id="checkbox-btn-81" name="checkbox-btns"> <label for="checkbox-btn-81" class="btn"> Sitoutunut </label>
+					  <input type="checkbox" id="checkbox-btn-82" name="checkbox-btns"> <label for="checkbox-btn-82" class="btn"> Huolehtiva </label>
+					  <input type="checkbox" id="checkbox-btn-83" name="checkbox-btns"> <label for="checkbox-btn-83" class="btn"> Maltillinen </label>
+					  <input type="checkbox" id="checkbox-btn-84" name="checkbox-btns"> <label for="checkbox-btn-84" class="btn"> Sitkeä </label>
+					  <input type="checkbox" id="checkbox-btn-85" name="checkbox-btns"> <label for="checkbox-btn-85" class="btn"> Uskollinen </label>
+					  <input type="checkbox" id="checkbox-btn-86" name="checkbox-btns"> <label for="checkbox-btn-86" class="btn"> Sisukas </label>
+					  <input type="checkbox" id="checkbox-btn-87" name="checkbox-btns"> <label for="checkbox-btn-87" class="btn"> Itsevarma </label>
+					  <input type="checkbox" id="checkbox-btn-88" name="checkbox-btns"> <label for="checkbox-btn-88" class="btn"> Vahva </label>
+					  <input type="checkbox" id="checkbox-btn-89" name="checkbox-btns"> <label for="checkbox-btn-89" class="btn"> Rohkea </label>
+					  <input type="checkbox" id="checkbox-btn-90" name="checkbox-btns"> <label for="checkbox-btn-90" class="btn"> Viisas </label>
+					  <input type="checkbox" id="checkbox-btn-91" name="checkbox-btns"> <label for="checkbox-btn-91" class="btn"> Päättäväinen </label>
+					  <input type="checkbox" id="checkbox-btn-92" name="checkbox-btns"> <label for="checkbox-btn-92" class="btn"> Määrätietoinen </label>
+					  <input type="checkbox" id="checkbox-btn-93" name="checkbox-btns"> <label for="checkbox-btn-93" class="btn"> Varma </label>
+					  <input type="checkbox" id="checkbox-btn-94" name="checkbox-btns"> <label for="checkbox-btn-94" class="btn"> Periksiantamaton </label>
+					  <input type="checkbox" id="checkbox-btn-95" name="checkbox-btns"> <label for="checkbox-btn-95" class="btn"> Sydämellinen </label>
+					  <input type="checkbox" id="checkbox-btn-96" name="checkbox-btns"> <label for="checkbox-btn-96" class="btn"> Turvallinen </label>
+					  <input type="checkbox" id="checkbox-btn-97" name="checkbox-btns"> <label for="checkbox-btn-97" class="btn"> Johtaja </label>
+					  <input type="checkbox" id="checkbox-btn-98" name="checkbox-btns"> <label for="checkbox-btn-98" class="btn"> Huolellinen </label>
+					  <input type="checkbox" id="checkbox-btn-99" name="checkbox-btns"> <label for="checkbox-btn-99" class="btn"> Vastuunkantaja </label>
+					  <input type="checkbox" id="checkbox-btn-100" name="checkbox-btns"> <label for="checkbox-btn-100" class="btn"> Ryhmätyötaitoinen </label>
 					</article>
 				</main>
 			</div>
