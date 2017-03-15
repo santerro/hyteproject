@@ -22,5 +22,5 @@ if ($row['username'] == $username && $row['password'] == $password){
 } else {
 	echo "Failed to login!";
 }
-
+			
 ?>

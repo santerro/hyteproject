@@ -38,10 +38,7 @@
 
 .highlight {
 	background-color: whitesmoke;
-<<<<<<< HEAD
-=======
 	width: 100%;
->>>>>>> origin/master
 }
 
 .shadow {
@@ -68,7 +65,7 @@
 
 .dropdown-content {
     display: none;
-
+  
 }
 
 
@@ -205,33 +202,7 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
-input[type=checkbox]{display:none;}
 
-input[type=checkbox] + label.btn{
-padding: 5px 5px;
-margin: 5px 5px;
-display: inline-block;
-box-shadow: 2px 4px 8px 0px black;
-width: 28%;
-text-transform: uppercase;
-font-weight: bold;
-outline: none;
-position: relative;
--webkit-transition: all 0.3s;
--moz-transition: all 0.3s;
-transition: all 0.3s;
-background: green;
-color: #fff;
--webkit-transition: none;
--moz-transition: none;
-transition: none;
-border: none;
-cursor: pointer;
-}
-
-input[type=checkbox]:checked + label.btn{
-background: blue;
-}
 
 @media screen and (min-width: 768px){
 	#top ul:first-child {
