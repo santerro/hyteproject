@@ -1,3 +1,13 @@
+<?php 
+	session_start();
+	include('process.php'); // Includes process Script
+
+		if(isset($_SESSION['login_user'])){
+		header("location: login2.php");
+		}
+?>
+
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -16,33 +26,41 @@
 				</ul>
 				<ul id="menu">
 					<li><a class="green nappi" href="index.html">Etusivu</a></li>
-					<li class="dropdown"><a class="green nappi" href="harjoitukset.html">Harjoitukset
-						<div class="dropdown-content">
-						<a class="green nappi"  href="harjoitukset.html #harj1">Harjoitus 1</a>
-    					<a class="green nappi" href="harjoitukset.html #harj2">Harjoitus 2</a>
-    					<a class="green nappi" href="harjoitukset.html #harj3">Harjoitus 3</a>
-					</div>
+					<li class="dropdown"><a class="green nappi" href="harjoitukset.php">Harjoitukset
+						<!--<div class="dropdown-content">
+								<a class="green nappi"  href="#harj1">Harjoitus 1</a>
+								<a class="green nappi" href="#harj2">Harjoitus 2</a>
+								<a class="green nappi" href="#harj3">Harjoitus 3</a>
+							</div>-->
 					</a></li>
 					<li><a class="green nappi" href="yhteystiedot.html">Yhteystiedot</a></li>
-					<li><a class="green nappi" href="login.php">Oma</a></li>
+					<li><a class="green nappi" href="login.php">Login</a></li>
 				</ul>
+				
+			</form>
 			</nav>
 			</header>
+			
 			<div id="frm">
-			<form action="process.php" method="POST">
+			<form action="" method="POST">
 				<p>
 					<label>Username:</label>
-					<input type="text" id="user" name="user" required/>
+					<input type="text" name="username" required/>
 
 				</p>
 				<p>
 					<label>Password:</label>
-					<input type="password" id="pass" name="pass" required/>
+					<input type="password" name="password" required/>
 				</p>
 				<p>
-					<input type="submit" id="btn" value="login" />
+					<input type="submit" id="btn" name="button" value="login" />
 				</p>
 			</form>
+			<br>
+			<?php echo $error; ?>
+
+			<p><a href="register.php">Sign up</a></p>
+			
 			</div>
 			<footer class="greenslide shadow">&#169; Fuutteri</footer>
 		</div>

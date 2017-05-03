@@ -1,26 +1,57 @@
 <?php 
-//get values passe from form in login.php file
-$username = $_POST['user'];
-$password = $_POST['pass'];
+		session_start(); // Starting Session
+		$error=''; // Variable To Store Error Message
+		include "dbsome.php";
+		if (isset($_POST['button'])) {
+		if (empty($_POST['username']) || empty($_POST['password'])) {
+		$error = "Username or Password is invalid";
+		}
+	
+	else{
+		$username=$_POST['username'];
+		$password=$_POST['password'];
 
-//to prevent mysql injection
-$username = stripcslashes($username);
-$password = stripcslashes($password);
-$username = mysql_real_escape_string($username);
-$password = mysql_real_escape_string($password);
+		$sql = "SELECT * FROM register WHERE username='$username' AND password='$password'";
+		$result = $conn->query($sql);
+		
 
-//connect to teh server and select database
-mysql_connect("localhost", "root", "");
-mysql_select_db("login");
-
-//query the database for user
-$result = mysql_query("select * from users where username = '$username' and password = '$password'")
-			or die("Failed to query database ".mysql_error());
-$row = mysql_fetch_array($result);
-if ($row['username'] == $username && $row['password'] == $password){
-	echo "Login success!!! Welcome ".$row['username'];
-} else {
-	echo "Failed to login!";
+		if ($result->num_rows == 1) {
+			$_SESSION['login_user']=$username;
+			header("Location: login2.php");
+		}
+		else{
+			$error = "Username or Password is invalid";
+		}
+		mysqli_close($conn);
+	}
 }
+
+
+
+
+
+/*session_start();
+include 'dbsome.php';
+
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+
+$sql = "SELECT * FROM register WHERE username='$username' AND password='$password'";
+$result = $conn->query($sql);
+
+if(!$row = $result->fetch_assoc()){
+header("Location: login.php");
+}
+
+	if ($_SESSION['id'] = $row['id']  AND $row['userlevel']==0) {
+		header("Location: login2.php");
 			
-?>
+	}
+
+		elseif ($_SESSION['admin'] = $row['id'] AND $row['userlevel']==1) {
+			header("Location: admin2.php");
+			
+	
+	}*/
+

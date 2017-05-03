@@ -1,19 +1,18 @@
 <?php 
 	session_start();
 ?>
-
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>hytehtml</title>
+		<title>login</title>
 		<link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 		<link href="tyyli.css" rel="stylesheet">
 	</head>
 	<body class="vaaleanruskea">
 		<div id="wrapper">
-			<header>
+			<header class="shadow">
 			<nav id="top">
 				<ul>
 					<li><a class="green" id="menuNappi" href="#">Menu &#9776;</a></li>
@@ -32,22 +31,25 @@
 				</ul>
 			</nav>
 			</header>
-			<div id="content-wrapper" class="sininen">
-				<nav id="left">
-					<ul>
+			<main class="highlight">
+				<form action="logout.php">
+					<button>LOG OUT</button>
+					</form>
+						
 
-					</ul>
-				</nav>
-				<main class="highlight">
-					<article>
-						<h1>Yhteystiedot</h1>
+						<?php
+						include "session.php";
 
+						?>
 
+					
+				
+			
+		
 
-					</article>
-				</main>
-			</div>
-			<footer class="green">&#169; Fuutteri</footer>
+		</main>
+
+			<footer class="greenslide shadow">&#169; Fuutteri</footer>
 		</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script>
@@ -55,6 +57,14 @@
 			$('#menuNappi').click(function(evt){
 				$('#menu').slideToggle(400);
 			});
+		});
+	</script>
+	<script>
+				$(document).ready(function () {
+		    $("li").click(function () {
+		        $('li > ul').not($(this).children("ul").toggle()).hide();
+		        
+		    });
 		});
 	</script>
 	</body>

@@ -1,3 +1,7 @@
+<?php 
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,32 +13,40 @@
   </head>
   <body class="vaaleanruskea">
     <div id="wrapper">
-      <header></header>
+     <header class="shadow">
       <nav id="top">
         <ul>
-          <li><a class="sininen" id="menuNappi" href="#">Menu &#9776;</a></li>
+          <li><a class="green" id="menuNappi" href="#">Menu &#9776;</a></li>
         </ul>
         <ul id="menu">
-          <li><a class="sininen nappi" href="index.html">Etusivu</a></li>
-          <li><a class="sininen nappi" href="harjoitukset.html">Harjoitukset</a></li>
-          <li><a class="sininen nappi" href="yhteystiedot.html">Yhteystiedot</a></li>
-          <li><a class="sininen nappi" href="login.php">Oma</a></li>
+          <li><a class="green nappi" href="index.html">Etusivu</a></li>
+          <li class="dropdown"><a class="green nappi" href="harjoitukset.php">Harjoitukset
+           <!--<div class="dropdown-content">
+                <a class="green nappi"  href="#harj1">Harjoitus 1</a>
+                <a class="green nappi" href="#harj2">Harjoitus 2</a>
+                <a class="green nappi" href="#harj3">Harjoitus 3</a>
+              </div>-->
+          </a></li>
+          <li><a class="green nappi" href="yhteystiedot.html">Yhteystiedot</a></li>
+          <li><a class="green nappi" href="login.php">Login</a></li>
         </ul>
+        
+      </form>
       </nav>
+      </header>
       <div id="frm">
       <h3>Create an account</h3>
-    <form action="process2.php" method="post">
+    <form action="process2.php" method="POST">
       
       <input type="text" placeholder="Username" name="username" required />
       <input type="email" placeholder="Email" name="email" required />
-      <input type="password" placeholder="Password" name="password" autocomplete="new-password" required />
-      <input type="password" placeholder="Confirm Password" name="confirmpassword" autocomplete="new-password" required />
+      <input type="password" placeholder="Password" name="password" required />
       
-      <input type="submit" value="Register" name="register" id="btn" />
+      <input type="submit" value="Register" id="btn" />
     </form>
     <a href="login.php">Login</a>
       </div>
-      <footer class="sininen">&#169; Fuutteri</footer>
+      <footer class="greenslide shadow">&#169; Fuutteri</footer>
     </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script>
