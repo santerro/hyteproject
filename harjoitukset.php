@@ -54,10 +54,14 @@
 						include "dbsome.php";
 								$sql = "SELECT * FROM strength";
 								$result = $conn->query($sql);
-
-								
+								$sql2 = "SELECT str_id FROM user_strength WHERE id = " . $_SESSION["login_userid"];
+								$res = $conn->query($sql2);
+								$already_has = array();
+								while ($rr = $res->fetch_assoc()) {
+									array_push($already_has, $rr["str_id"]);
+								}
 								while ($row = $result->fetch_assoc()) {
-						    		echo '<input type="checkbox" id="checkbox'.$row['id'].'"name="checkbox_btns[]" value="'.$row['id'].'"> <label for="checkbox'.$row['id'].'"class="btn">'.$row['name'].'</label>';
+						    		echo '<input type="checkbox" id="checkbox'.$row['id'].'"name="checkbox_btns[]" value="'.$row['id'].'" ' . (in_array($row['id'], $already_has) ? "checked" : "") . '> <label for="checkbox'.$row['id'].'"class="btn">'.$row['name'].'</label>';
 						}?>
 							<br>
 							<br>

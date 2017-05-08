@@ -8,6 +8,7 @@
 		}
 	
 	else{
+		//TODO mysqli_real_escape!!!! SQL injection
 		$username=$_POST['username'];
 		$password=$_POST['password'];
 
@@ -16,7 +17,10 @@
 		
 
 		if ($result->num_rows == 1) {
+			$row = mysqli_fetch_assoc($result);
 			$_SESSION['login_user']=$username;
+			$_SESSION['login_userid']=$row["id"];
+			$_SESSION['login_usergroup']=$row["groupid"];
 			header("Location: login2.php");
 		}
 		else{

@@ -44,24 +44,37 @@ session_start();
 					echo '<h1>'.$row["username"]."'s Profile</h1>";?>
 					<h4 style="margin-left: 80%">Vahvuudet:</h4>
 					<p style="margin-left: 80%"><?php 
-							if (isset($_POST['checkbox_btns'])) { //to run PHP script on submit
+							/*if (isset($_POST['checkbox_btns'])) { //to run PHP script on submit
 								if (!empty($_POST['checkbox_btns'])) {
 
-									$login_session =$row['id'];
 									$checkstr = $_POST['checkbox_btns'];
-									$instr="INSERT INTO user_strength (id,str_id) VALUES ('$login_session', '$checkstr')";
-
-
 						            // Loop to store and display values of individual checked checkbox.
 									foreach ($_POST['checkbox_btns'] as $selected) {
 										echo $selected."</br>";
 									}
 								}
+							}*/
+
+							$checkstr = $_POST['checkbox_btns'];
+							//$loginid = $_row['id'];
+							if(is_array($checkstr)){
+								$del = "DELETE FROM `user_strength` WHERE id = " .  $_SESSION['login_userid'];
+								mysqli_query($conn, $del);
+								$instr="INSERT IGNORE INTO user_strength (id,str_id) VALUES ";//('$loginid', '$checkstr')";
+								foreach ($_POST['checkbox_btns'] as $selected) {
+									$instr .= "('$login_session', '$selected')" . ($selected == end($_POST['checkbox_btns']) ? ";" : ",");
+								}
+								//echo "test? $instr";
+								//here run the $instr
+								mysqli_query($conn, $instr);
 							}
 
-							/*$checkstr = $_POST['checkbox_btns'];
-							$loginid = $_row['id'];
-							$instr="INSERT INTO user_strength (id,str_id) VALUES ('$loginid', '$checkstr')";
+							$stren = "SELECT strength.id, name FROM strength INNER JOIN user_strength on strength.id = user_strength.str_id WHERE user_strength.id = " . $_SESSION['login_userid'];
+							$user_strengths = mysqli_query($conn, $stren);
+							echo "your strengths: <br>";
+							 while ($rowstren = mysqli_fetch_assoc($user_strengths)) {
+						        echo $rowstren["name"] . "<br>";
+						    }
 
 
 							$btns="SELECT * FROM user_strength";
@@ -69,7 +82,7 @@ session_start();
 							$ro = $res->fetch_assoc();
 							if ($ro['id'] == $row['id']) {
 								echo $ro['str_id'];
-							}*/
+							}
 
 							?></p><?php
 							echo "<table>";
@@ -161,16 +174,38 @@ else{
 				$result = mysqli_query($conn, $query);
 				$categories = array();
 				while ($row = $result->fetch_assoc()) {
-					$categories["Groupid: ".$row['groupid']."<br>Groupname: ".$row['name']."<br>"."Grouptype: ".$row['type']."<br>"."Location: ".$row['location']][] = "Username: ".$row['username']."<br>";
+					$group_stren = "SELECT strength.id, name FROM strength INNER JOIN user_strength on strength.id = user_strength.str_id INNER JOIN register ON user_strength.id = register.id WHERE register.groupid = " . $row['groupid'];
+					//echo "Debug: $group_stren <br>";
+					$res = mysqli_query($conn, $group_stren);
+					$categories["Groupid: ".$row['groupid']."<br>Groupname: ".$row['name']."<br>"."Grouptype: ".$row['type']."<br>"."Location: ".$row['location']]["users"][] = "Username: ".$row['username']."<br>";
+					while ($rr = $res->fetch_assoc()) {
+						//echo "ReallY? " . $row['groupid'] . " :: " . $rr["name"] . "<br>";
+						if(!is_array($categories["Groupid: ".$row['groupid']."<br>Groupname: ".$row['name']."<br>"."Grouptype: ".$row['type']."<br>"."Location: ".$row['location']]["strten"])){
+							$categories["Groupid: ".$row['groupid']."<br>Groupname: ".$row['name']."<br>"."Grouptype: ".$row['type']."<br>"."Location: ".$row['location']]["strten"] = array();
+						}
+						if(!in_array("strength: " . $rr["name"]."<br>", $categories["Groupid: ".$row['groupid']."<br>Groupname: ".$row['name']."<br>"."Grouptype: ".$row['type']."<br>"."Location: ".$row['location']]["strten"], true)){
+							$categories["Groupid: ".$row['groupid']."<br>Groupname: ".$row['name']."<br>"."Grouptype: ".$row['type']."<br>"."Location: ".$row['location']]["strten"][] = "strength: " . $rr["name"]."<br>";
+						}
+					}
 				}
 
 				foreach($categories as $key => $category){
 					echo '<br><hr />'.$key.'<br/>';
 					echo "<br>Users:";
-					foreach($category as $rowdata){ 
+					foreach($category["users"] as $rowdata){ 
 						echo '<table>';
 						echo '<tr><td>'.$rowdata.'</tr></td>';
 						echo '</table>';
+					}
+					echo "<br>Strengths:";
+					if(is_array($category["strten"])){
+						foreach($category["strten"] as $rowdata){ 
+							echo '<table>';
+							echo '<tr><td>'.$rowdata.'</tr></td>';
+							echo '</table>';
+						}
+					} else {
+						echo "<br>Empty.";
 					}
 				}
 
