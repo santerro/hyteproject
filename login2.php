@@ -42,7 +42,6 @@ session_start();
 				if ($row['userlevel'] == 0) {
 
 					echo '<h1>'.$row["username"]."'s Profile</h1>";?>
-					<h4 style="margin-left: 80%">Vahvuudet:</h4>
 					<p style="margin-left: 80%"><?php 
 							/*if (isset($_POST['checkbox_btns'])) { //to run PHP script on submit
 								if (!empty($_POST['checkbox_btns'])) {
@@ -71,18 +70,18 @@ session_start();
 
 							$stren = "SELECT strength.id, name FROM strength INNER JOIN user_strength on strength.id = user_strength.str_id WHERE user_strength.id = " . $_SESSION['login_userid'];
 							$user_strengths = mysqli_query($conn, $stren);
-							echo "your strengths: <br>";
+							echo "your strengths: <br><br>";
 							 while ($rowstren = mysqli_fetch_assoc($user_strengths)) {
 						        echo $rowstren["name"] . "<br>";
 						    }
 
 
-							$btns="SELECT * FROM user_strength";
+							/*$btns="SELECT * FROM user_strength";
 							$res = mysqli_query($conn, $btns);
 							$ro = $res->fetch_assoc();
 							if ($ro['id'] == $row['id']) {
 								echo $ro['str_id'];
-							}
+							}*/
 
 							?></p><?php
 							echo "<table>";
