@@ -45,6 +45,13 @@
 	box-shadow: 4px 6px 15px 3px black;
 }
 
+.current {
+	text-decoration: none;
+	display: block;
+	line-height: 2.8em;
+	text-align: center;
+	border-bottom: 0.2em solid darkorange;
+}
 .nappi {
 	text-decoration: none;
 	display: block;
@@ -65,7 +72,7 @@
 
 .dropdown-content {
     display: none;
-  
+
 }
 
 .group{
@@ -91,7 +98,10 @@ h1 {
 	font-size: 3.5em;
 	text-align: center;
 	text-shadow: 2px 2px grey;
+}
 
+h2 {
+	text-align: center;
 }
 
 body {
@@ -100,9 +110,10 @@ body {
 }
 
 #wrapper {
-	max-width: 62.5em;
+	max-width: 70em;
 	margin: auto;
-	padding-top: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 
 }
 
@@ -165,7 +176,7 @@ header img {
 
 #frm{
 	border: solid gray 1px;
-	width: 40%;
+	width: 350px;
 	border-radius: 5px;
 	margin: 100px auto;
 	background: white;
@@ -219,29 +230,32 @@ input[type=text], input[type=password] {
 input[type=checkbox]{display:none;}
 
 		input[type=checkbox] + label.btn{
-		padding: 5px 5px;
-		margin: 5px 5px;
+		padding: 9px 5px;
+		margin: 12px 20px;
 		display: inline-block;
-		box-shadow: 2px 4px 8px 0px black;
-		width: 22%;
+		width: 230px;
+		font-size: small;
 		text-transform: uppercase;
 		text-align: center;
+		border-radius: 10px;
 		outline: none;
 		position: relative;
 		-webkit-transition: all 0.3s;
 		-moz-transition: all 0.3s;
 		transition: all 0.3s;
-		background: green;
-		color: #fff;
+		background-image: radial-gradient(#7CFC00, #00ff00, #00e600, #009900, #006400);
+    font-weight: bold;
+		color: black;
 		-webkit-transition: none;
 		-moz-transition: none;
 		transition: none;
-		border: none;
+		border: outset #c2c2a3;
 		cursor: pointer;
 		}
 
 		input[type=checkbox]:checked + label.btn{
-		background: blue;
+		background-image: radial-gradient(white, yellow, #f06d06);
+		color: black;
 		}
 
 * {box-sizing:border-box}
@@ -326,12 +340,12 @@ body {font-family: Verdana,sans-serif;margin:0}
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
 
 @keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
 
@@ -375,5 +389,7 @@ body {font-family: Verdana,sans-serif;margin:0}
 
 	main {
 		width: 100%;
+		margin-left: 1px;
+		margin-right: 1px;
 	}
 }
